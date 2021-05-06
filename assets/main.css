@@ -1,0 +1,78 @@
+@import url("fonts/fonts.css");
+a{
+	color: #EF8354;
+	text-decoration: none; }
+p{
+	margin: 0; }
+img{
+	position: fixed;
+	max-height: 130px;
+	margin-top: 100px; }
+
+.u{ text-decoration: underline; }.w33{ width: 33.33%; border-bottom: 1px dotted; margin-bottom: 5px; }.w25{ width: 25%; border-bottom: 1px dotted; margin-bottom: 5px; }.w20{ width: 20%; border-bottom: 1px dotted; margin-bottom: 5px; }.w16{ width: 11.11%; border-bottom: 1px dotted; margin-bottom: 5px; }.tal{ text-align: left; }.tac{ text-align: center; }.tar{ text-align: right; }.hide{ display: none; size: 50px; }
+.colorSpace{color: #2D3142;}.colorSilver{color: #BFC0C0}.colorIndependence{color: #4F5D75}.colorMandarin{color: #EF8354}
+body{
+	display: inline-flex;
+	flex-wrap: wrap;
+	width: 100%; 
+	font-family: Montserrat; 
+	font-weight: bold;
+	font-size: 15px; 
+	background-color: #4F5D75; 
+	color: #BFC0C0; 
+	margin: 0; }
+#identifica, #registro{
+	border: 3px solid black; 
+	border-radius: 5px; 
+	width: 20%; 
+	height: fit-content;
+	margin: 50px auto; 
+	padding: 5px; }
+#registro{
+    text-align: center;
+}
+#stats, #stations{
+	border: 3px solid black; 
+	border-radius: 5px; 
+	width: 40%; 
+	height: fit-content;
+	margin: 50px auto; 
+	padding: 5px; }
+#menu{
+    border-bottom: teal double 4px;
+}
+#menu ul li{
+    margin: 12px;
+    text-decoration: underline;
+    width: max-content;
+}
+#menu .usuario{
+    float: right;
+    width: -webkit-fill-available;
+    padding-right: 10px;
+    text-align: end;
+    align-self: center;
+}
+.title{
+	display: inline-block;
+	width: 100%;
+	text-align: center;
+	font-size: 26px;
+	padding-bottom: 10px; }
+.wrapper {
+    display: inline-flex;
+    width: 100%; 
+}
+.wrapper ul{
+    display: inline-flex;
+}
+.reg:active{
+    box-shadow:inset 0 0.6em 2em -0.3em rgba(0,0,0,0.15),inset 0 0 0em 0.05em rgba(255,255,255,0.12);
+}
+.reg{
+    border-radius:0.2em;
+    text-decoration:none;
+    color:#FFFFFF;
+    background-color:#2D3142;
+    box-shadow:inset 0 -0.6em 1em -0.35em rgba(0,0,0,0.17),inset 0 0.6em 2em -0.3em rgba(255,255,255,0.15),inset 0 0 0em 0.05em rgba(255,255,255,0.12);
+}

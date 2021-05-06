@@ -1,0 +1,85 @@
+@import url("fonts/fonts.css");
+a{
+	color: #EF8354;
+	text-decoration: none;}
+body{
+	display: inline-flex;
+	flex-wrap: wrap;
+	width: 100%; 
+	font-family: Montserrat; 
+	font-weight: bold;
+	font-size: 15px; 
+	background-color: #4F5D75; 
+	color: #BFC0C0; 
+	margin: 0;}
+#registro{
+    text-align: center;
+	border: 3px solid black; 
+	border-radius: 5px; 
+	width: 20%; 
+	height: fit-content;
+	margin: 50px auto; 
+	padding: 5px;}
+.header{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	min-height: 50px;
+	border-bottom: teal double 4px;}
+.header div{
+	margin: 10px;}
+.header ul{
+	display: flex;
+	align-items: center;
+	width: 100%;}
+.header ul li{
+	margin: 5px;
+	text-decoration: underline;}
+.header ul li:last-child{
+	align-items: flex-end;}
+.btn{
+	text-decoration:none;
+    box-shadow:inset 0 -0.6em 1em -0.35em rgba(0,0,0,0.17),inset 0 0.6em 2em -0.3em rgba(255,255,255,0.15),inset 0 0 0em 0.05em rgba(255,255,255,0.12);
+    border-radius:0.2em;
+	background-color: #2D3142;
+	color: #EF8354;
+	padding: 6px 10px;
+	cursor: pointer;
+	border: none;}
+.btn:active{
+    box-shadow:inset 0 0.6em 2em -0.3em rgba(0,0,0,0.15),inset 0 0 0em 0.05em rgba(255,255,255,0.12);}
+.btn:hover{
+	background-color: #202330;}
+.usuario{
+	display: flex;
+	justify-content: flex-end;
+	flex-grow: 1;
+	align-items: center;}
+	input{
+		margin: 4px;
+		background-color: #4F5D75;
+		border: 1px solid #EF8354;
+		border-radius: 3px;
+	}
+	p{
+		margin-right: 20px;
+	}
+.page{
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	justify-content: center;
+	align-items: center;
+	margin-top: 20px;}
+#envio{
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: center;
+	width: 500px;
+}
+#envio input{
+	margin: 5px;
+}
