@@ -1,6 +1,6 @@
 <?php
 include('assets/php/funciones.php');
-include('subasta.php');
+include('Subasta.php');
 
 ?>
 
@@ -19,7 +19,12 @@ include('subasta.php');
         <?php menu(); ?>
     </div>
     <div class="page">
-            <?php if(isset($_GET['ID'])){$subasta = new Subasta(); $subasta->sacarDatos();}else{echo "No hay subasta seleccionada";}?>
+            <?php if(isset($_GET['ID'])) {
+				$subasta = new Subasta();
+				$subasta->sacarDatos();
+				}else{
+					echo "No hay subasta seleccionada";
+					}?>
     </div>
 </body>
 </html>
