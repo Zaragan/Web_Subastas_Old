@@ -23,16 +23,16 @@ class Subasta {
                 break;
         }
         $dbCall = new Database(); 
-        $getSubastas = $dbCall->setQuery("SELECT subastas FROM subastausers WHERE email=$_SESSION[email]");
+        $getSubastas = $dbCall->setQuery("SELECT `subastas` FROM `subastausers` WHERE `email`=$_SESSION[email]");
         $fila = mysqli_fetch_assoc($getSubastas);
         $fila['subastas']++;
-        $dbCall->setQuery("INSERT INTO `subastas`(nombre, fecha, fecha_fin, precio_salida, precio_actual) VALUES ('$nombre','$unixTime','$fecha_fin','$precio_salida','$precio_salida')");
-        $dbCall->setQuery("UPDATE `subastausers` SET `subastas`=$fila[subastas] WHERE email=$_SESSION[email]");
+        $dbCall->setQuery("INSERT INTO `subastasold`(nombre, fecha, fecha_fin, precio_salida, precio_actual) VALUES ('$nombre','$unixTime','$fecha_fin','$precio_salida','$precio_salida')");
+        $dbCall->setQuery("UPDATE `subastausers` SET `subastas`=$fila[subastas] WHERE `email`=$_SESSION[email]");
     }
 
     public function sacarDatos() {
         $dbCall = new Database();
-        $datos = $dbCall->setQuery("SELECT * from subastas WHERE id=$_GET[ID]");
+        $datos = $dbCall->setQuery("SELECT * from `subastasold` WHERE `id`=$_GET[ID]");
 		while($fila = mysqli_fetch_assoc($datos)) {
             $fecha_creada = date("d m Y - G:i",$fila['fecha']);
             $fecha_final = date("d m Y - G:i",$fila['fecha_fin']);
@@ -52,18 +52,18 @@ class Subasta {
         if(isset($_POST['pujar'])){
             $puja = $_POST["puja"];
             $dbCall = new Database();
-            $subastas = $dbCall->setQuery("SELECT * from subastas WHERE id=$_GET[ID]");
+            $subastas = $dbCall->setQuery("SELECT * from `subastasold` WHERE id=$_GET[ID]");
             while($fila = mysqli_fetch_assoc($subastas)) {
         
                 if($puja <= $fila['precio_actual']) {
                     echo "Haz una puja mayor que el precio actual";
                 } else {
-                    $dbCall->setQuery("UPDATE `subastas` SET `precio_actual`=$puja");
+                    $dbCall->setQuery("UPDATE `subastasold` SET `precio_actual`=$puja");
                     header('Location: Subastas.php?ID='.$fila['id'].'');
                 }
             }
             $moneda = $_SESSION['moneda']-$_POST['puja'];
-            $dbCall->setQuery("UPDATE `subastausers` SET `moneda`=$moneda WHERE email=$_SESSION[email]");
+            $dbCall->setQuery("UPDATE `subastausers` SET `moneda`=$moneda WHERE `email`=$_SESSION[email]");
         }   
 	}
 }

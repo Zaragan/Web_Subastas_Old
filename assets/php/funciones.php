@@ -41,7 +41,7 @@ function page(){
         //      LOGGED
         include('assets/php/db.php');
         $dbCall = new Database();
-        $users = $dbCall->setQuery("SELECT id,nombre,fecha,fecha_fin,caducada,precio_salida,precio_actual FROM subastas");
+        $users = $dbCall->setQuery("SELECT id,nombre,fecha,fecha_fin,precio_salida,precio_actual FROM `subastasold`");
         
         if ($users->num_rows > 0) {
             while ($fila = $users->fetch_assoc()) {
@@ -57,6 +57,7 @@ function page(){
             }
         }
     }
+    return $page;
 }
 
 ?>
